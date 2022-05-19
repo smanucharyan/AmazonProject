@@ -15,7 +15,7 @@ class AmazonTest(unittest.TestCase, SetUpClass):
         self.mainPage = MainPageClass(self.driver)
         self.signInPage = SignInClass(self.driver)
         self.passPage = PasswordPageClass(self.driver)
-        self.logout = HomePageClass(self.driver)
+        self.homePage = HomePageClass(self.driver)
 
 
     def test_amazon1(self):
@@ -33,9 +33,9 @@ class AmazonTest(unittest.TestCase, SetUpClass):
         time.sleep(2)
         self.passPage.click_to_sign_in()
         time.sleep(2)
-        self.logout.hover()
+        self.homePage.hover()
         time.sleep(1)
-        self.logout.log_out()
+        self.homePage.log_out()
 
     def tearDown(self):
         time.sleep(2)
