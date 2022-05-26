@@ -1,5 +1,8 @@
-from AmazonProject.Common.CustomFind.FindElement import FindElement
-from AmazonProject.Locators.Locators import *
+import time
+
+from AmazonProjectShoghik.Common.CustomFind.FindElement import FindElement
+from AmazonProjectShoghik.Locators.Locators import *
+
 
 class ProductPageClass():
     def __init__(self, driver):
@@ -9,3 +12,4 @@ class ProductPageClass():
     def go_to_product(self):
         productClick = self.findElement.find(*productOpen)
         productClick.click()
+        time.sleep(2)

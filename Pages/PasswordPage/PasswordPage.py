@@ -1,6 +1,8 @@
-from AmazonProject.Locators.Locators import *
-from AmazonProject.Common.CustomFind.FindElement import FindElement
-from AmazonProject.Common.Variables.Variables import *
+import time
+from AmazonProjectShoghik.Locators.Locators import *
+from AmazonProjectShoghik.Common.CustomFind.FindElement import FindElement
+from AmazonProjectShoghik.Common.Variables.Variables import *
+
 
 class PasswordPageClass():
     def __init__(self, driver):
@@ -11,11 +13,14 @@ class PasswordPageClass():
         password = self.findElement.find(*passwordInput)
         password.click()
         password.clear()
+        time.sleep(2)
         password.send_keys(*correctPasswrd)
+        time.sleep(2)
 
     def remember_me(self):
         rememberMe = self.findElement.find(*rememberMeCheckbox)
         rememberMe.click()
+        time.sleep(2)
 
     def click_to_sign_in(self):
         sign_in_button = self.findElement.find(*signInButton)
@@ -27,11 +32,11 @@ class PasswordPageClass():
         password.clear()
         password.send_keys(*wrongPasswrd)
         self.click_to_sign_in()
+        time.sleep(2)
         #1st solution for negative case
         # theElement = self.findElement.find(*wrongPass)
         # assert theElement.text == 'Your password is incorrect'
         # print ("The password is incorrect.")
-
         #2nd solution for negative case
         txt = self.findElement.find(*wrongPassAnotherSolution)
         if txt.is_displayed():

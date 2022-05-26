@@ -1,5 +1,6 @@
-from AmazonProject.Common.CustomFind.FindElement import FindElement
-from AmazonProject.Locators.Locators import *
+from AmazonProjectShoghik.Common.CustomFind.FindElement import FindElement
+from AmazonProjectShoghik.Locators.Locators import *
+
 
 class ProductDetailsPageClass():
     def __init__(self, driver):

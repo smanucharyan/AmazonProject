@@ -22,13 +22,13 @@ searchProduct = (By.ID, "twotabsearchtextbox")
 menu = (By.ID, "nav-link-accountList")
 logout = (By.ID, "nav-item-signout")
 
-#Card Page
+#Cart Page
 delete1Product = (By.XPATH, "(//input[@class='a-color-link'])[1]")
 productsLoc = (By.XPATH, "//img[@class='sc-product-image']")
 cardCount = (By.ID, "nav-cart-count")
+cartMessage = (By.XPATH, "//div[@class='a-row sc-cart-header']")
 
 #Product Page
 productOpen = (By.XPATH, "(//img[@class='s-image'])[1]")
 addCard = (By.ID, "add-to-cart-button")
-
 

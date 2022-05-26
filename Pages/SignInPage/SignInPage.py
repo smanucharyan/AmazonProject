@@ -1,7 +1,7 @@
-from AmazonProject.Locators.Locators import *
-from AmazonProject.Common.CustomFind.FindElement import FindElement
-from AmazonProject.Common.Variables.Variables import *
-
+import time
+from AmazonProjectShoghik.Locators.Locators import *
+from AmazonProjectShoghik.Common.CustomFind.FindElement import FindElement
+from AmazonProjectShoghik.Common.Variables.Variables import *
 
 
 class SignInClass():
@@ -13,7 +13,9 @@ class SignInClass():
         username = self.findElement.find(*emailUsername)
         username.click()
         username.clear()
+        time.sleep(2)
         username.send_keys(*correctUsername)
+        time.sleep(2)
 
     def continue_button(self):
         continueBtn = self.findElement.find(*continueButton)
@@ -25,11 +27,11 @@ class SignInClass():
         username.clear()
         username.send_keys(*wrongUser)
         self.continue_button()
+        time.sleep(2)
         # 1st solution for negative case
         # myElement = self.findElement.find(*wrongEmail)
         # assert myElement.text == 'We cannot find an account with that email address'
         # print ("The username is incorrect.")
-
         # 2nd solution for negative case
         txt = self.findElement.find(*wrongEmailAnotherSolution)
         if txt.is_displayed():
@@ -43,6 +45,7 @@ class SignInClass():
         self.continue_button()
         errorMessage = self.findElement.find(*wrongEmailAnotherSolution)
         return errorMessage
+
 
 
 

@@ -1,6 +1,7 @@
-from AmazonProject.Locators.Locators import *
-from AmazonProject.Common.CustomFind.FindElement import FindElement
+from AmazonProjectShoghik.Locators.Locators import *
+from AmazonProjectShoghik.Common.CustomFind.FindElement import FindElement
 import time
+
 
 class CartPageClass():
     def __init__(self, driver):
@@ -12,7 +13,9 @@ class CartPageClass():
             deleteProduct1 = self.findElement.find(*delete1Product)
             deleteProduct1.click()
         except:
-            print("There is no product in the card")
+            txt = self.findElement.find(*cartMessage)
+            if txt.is_displayed():
+                print("Your cart is empty.")
 
     def delete_all_products(self):
         myCardCount = self.findElement.find(*cardCount)
