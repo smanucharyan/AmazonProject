@@ -26,7 +26,6 @@ class TestLogoutClass(unittest.TestCase, SetUpClass):
         self.passPage.password_input()
         self.passPage.remember_me()
         self.passPage.click_to_sign_in()
-        #self.homePage.validate_signed_in_again()
         self.homePage.hover()
         self.assertTrue(self.homePage.validate_signed_in())
         print("Sign out button is displayed")

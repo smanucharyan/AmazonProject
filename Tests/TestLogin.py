@@ -1,7 +1,6 @@
 import time
 import unittest
 import timeit
-from selenium.webdriver.common.by import By
 from AmazonProjectShoghik.Common.SetUp.SetUp import SetUpClass
 from AmazonProjectShoghik.Pages.MainPage.MainPage import MainPageClass
 from AmazonProjectShoghik.Pages.SignInPage.SignInPage import SignInClass
@@ -22,11 +21,6 @@ class TestLoginClass(unittest.TestCase, SetUpClass):
         self.mainPage.go_to_sign_in()
         self.signInPage.email_username()
         self.signInPage.continue_button()
-        try:
-            self.assertTrue(By.LINK_TEXT, "Password")
-            print("Assertion is True")
-        except:
-            print("Assertion is False")
         self.passPage.password_input()
         self.passPage.remember_me()
         self.passPage.click_to_sign_in()
